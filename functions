@@ -1,0 +1,11 @@
+# SSHAgent Bash
+function sshize() {
+    ssh-agent | head -2 | tee ~/.bash_ssh
+    source ~/.bash_ssh
+}
+
+# SSL Cert Check
+function cert() {
+    ( [ -z $2 ] ) &&  export port=443  ||  export port=$2  
+    openssl s_client -connect $1:$port
+}

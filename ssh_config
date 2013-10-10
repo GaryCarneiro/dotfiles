@@ -1,0 +1,4 @@
+StrictHostKeyChecking no
+ForwardAgent yes
+AddressFamily inet
+Protocol 2

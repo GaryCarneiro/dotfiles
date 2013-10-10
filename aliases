@@ -1,0 +1,19 @@
+#COMMAND ALIASES
+alias l='ls -F'
+alias lr='ls -lrt'
+alias ls='ls -F'
+alias ll='ls -lh'
+alias rm='rm -i'
+alias mv='mv -i'
+alias ..='cd ..'
+alias la='ls -alh'
+alias df='df -h'
+alias du='du -sh .'
+alias vi='vim'
+alias ..='cd ..'
+
+alias av='ping -a in.yahoo.com'
+
+
+#TMUX STUFF
+alias tl='tmux ls'
