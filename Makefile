@@ -17,3 +17,6 @@ tmux:
 
 vim:
 	/bin/cp -v vimrc ~/.vimrc
+
+ruby:
+	/bin/cp -v irbrc ~/.irbrc
