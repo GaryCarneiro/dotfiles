@@ -6,7 +6,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME=random
+# ZSH_THEME=random
+ZSH_THEME=pygmalion
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -48,8 +49,18 @@ export EDITOR='vim'
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-source ~/.aliases
-source ~/.functions
+
+if [ -f ~/.aliases ] ; then
+    source ~/.aliases
+fi
+
+if [ -f ~/.functions ] ; then
+    source ~/.functions
+fi
+
+if [ -f $ZSH//zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] ; then
+    source $ZSH//zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 source ~/.bash_ssh
 #Do NOT share history between different shells. (It gets irritating after some time )
