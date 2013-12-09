@@ -16,6 +16,7 @@ set encoding=utf-8 " Necessary to show unicode glyphs
 
 if v:version >= 703
         set cursorline
+"        set cursorcolumn       "Set Vertical line
 endif
 
 
