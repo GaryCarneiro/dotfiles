@@ -73,6 +73,8 @@ fi
 
 #Do NOT share history between different shells. (It gets irritating after some time )
 unsetopt sharehistory
-clear
+setopt Ignoreeof
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#
+clear
