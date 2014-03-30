@@ -1,5 +1,8 @@
 [user]
         name = GaryCarneiro
+	email = GaryCarneiro@github.com
 [color]
         ui = auto
         ui = true
+[push]
+	default = simple
