@@ -67,7 +67,7 @@ if [ -f ~/.ssh_agent ] ; then
     source ~/.ssh_agent
 fi
 
-if  [-f ~/.rvm/scripts/rvm ] ; then
+if [ -f ~/.rvm/scripts/rvm ] ; then
     source ~/.rvm/scripts/rvm
 fi
 
