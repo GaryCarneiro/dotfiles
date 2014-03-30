@@ -1,7 +1,7 @@
 # SSHAgent Bash
 function sshize() {
-    ssh-agent | head -2 | tee ~/.bash_ssh
-    source ~/.bash_ssh
+    ssh-agent | head -2 | tee ~/.ssh_agent
+    source ~/.ssh_agent
 }
 
 # This function cert fetches SSL Certificate on a specified port or defaults the port to 443
