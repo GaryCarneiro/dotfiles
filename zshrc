@@ -47,9 +47,12 @@ plugins=(git)
 
 
 export EDITOR='vim'
-source $ZSH/oh-my-zsh.sh
+
 
 # Customize to your needs...
+if [ -f $ZSH/oh-my-zsh.sh] ; then
+    source $ZSH/oh-my-zsh.sh
+fi
 
 if [ -f ~/.aliases ] ; then
     source ~/.aliases
@@ -69,12 +72,13 @@ fi
 
 if [ -f ~/.rvm/scripts/rvm ] ; then
     source ~/.rvm/scripts/rvm
+    export  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
 #Do NOT share history between different shells. (It gets irritating after some time )
+#
 unsetopt sharehistory
 setopt Ignoreeof
 
-export  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-#
+#Clear Screen
 clear
