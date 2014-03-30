@@ -49,10 +49,8 @@ plugins=(git)
 export EDITOR='vim'
 
 
+source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
-if [ -f $ZSH/oh-my-zsh.sh] ; then
-    source $ZSH/oh-my-zsh.sh
-fi
 
 if [ -f ~/.aliases ] ; then
     source ~/.aliases
