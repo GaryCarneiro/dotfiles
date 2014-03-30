@@ -7,7 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME=random
-ZSH_THEME=pygmalion
+# ZSH_THEME=pygmalion
+ZSH_THEME="gentoo"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -62,7 +63,16 @@ if [ -f $ZSH//zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] ; then
     source $ZSH//zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-source ~/.bash_ssh
+if [ -f ~/.ssh_agent ] ; then 
+    source ~/.ssh_agent
+fi
+
+if  [-f ~/.rvm/scripts/rvm ] ; then
+    source ~/.rvm/scripts/rvm
+fi
+
 #Do NOT share history between different shells. (It gets irritating after some time )
 unsetopt sharehistory
 clear
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
