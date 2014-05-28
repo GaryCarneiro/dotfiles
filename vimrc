@@ -5,27 +5,28 @@ syntax enable
 filetype indent on
 " set autoindent width to 4 spaces
 set et
-set sw=4
+set sw=4          "
 set smarttab
-set ruler
-set ignorecase
+set ruler          "Show cursor position in right hand corner
+set ignorecase     "Ignore Search case         
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
 
 
 if v:version >= 703
-        set cursorline
-"        set cursorcolumn       "Set Vertical line
+        set cursorline          " Set Horizontal line
+"        set cursorcolumn       " Set Vertical line
 endif
 
 
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+
 if has("autocmd")
   " Enable filetype detection
-  filetype plugin indent on
+  filetype plugin indent on     
 
-  " Restore cursor position
+  " Restore cursor position since last opening
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
