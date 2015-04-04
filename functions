@@ -2,6 +2,7 @@
 function sshize() {
     ssh-agent | head -2 | tee ~/.ssh_agent
     source ~/.ssh_agent
+    echo "Run ssh-add after this"
 }
 
 # This function cert fetches SSL Certificate on a specified port or defaults the port to 443
