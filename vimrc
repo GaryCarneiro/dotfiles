@@ -19,6 +19,9 @@ if v:version >= 703
 "        set cursorcolumn       " Set Vertical line
 endif
 
+" Map F5 and F6 to run ruby and python scripts respectively
+nnoremap <silent> <F5> :!clear ; ruby %<CR>
+nnoremap <silent> <F6> :!clear ; python %<CR>
 
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 
