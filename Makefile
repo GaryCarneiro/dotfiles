@@ -1,11 +1,13 @@
-BACKUPDIR=~/.dotfiles-$(shell date "+%d%b%Y-%H%M")
+BACKUPDIR=~/.dotfiles-$(shell date "+%d%b%Y-%H%M%S")
 
-CMD=$(shell mkdir -v $(BACKUPDIR))
+all:	backup ssh shell zsh git tmux vim
 
-all:	ssh shell zsh git tmux vim 
 
+backup:
+	@echo "Backup Directory is $(BACKUPDIR)"
+	mkdir -v $(BACKUPDIR)
 ssh:
-	/bin/cp -v ~/.ssh/config $(BACKUPDIR)
+	/bin/cp -v ~/.ssh/config $(BACKUPDIR)/
 	/bin/cp -v ssh_config ~/.ssh/config
 
 shell:
