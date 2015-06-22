@@ -11,6 +11,8 @@ ssh:
 	/bin/cp -v ssh_config ~/.ssh/config
 
 shell:
+	/bin/cp -v ~/.bashrc  $(BACKUPDIR)
+	/bin/cp -v ~/.bash_profile  $(BACKUPDIR)
 	/bin/cp -v ~/.aliases $(BACKUPDIR)
 	/bin/cp -v aliases ~/.aliases
 	/bin/cp -v ~/.functions $(BACKUPDIR)
