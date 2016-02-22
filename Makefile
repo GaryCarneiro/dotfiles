@@ -7,35 +7,48 @@ backup:
 	@echo "Backup Directory is $(BACKUPDIR)"
 	mkdir -v $(BACKUPDIR)
 ssh:
-	/bin/cp -v ~/.ssh/config $(BACKUPDIR)/
-	/bin/cp -v ssh_config ~/.ssh/config
+	touch ~/.ssh/config
+	/bin/cp -vf ~/.ssh/config $(BACKUPDIR)/
+	/bin/cp -vf ssh_config ~/.ssh/config
 
 shell:
-	/bin/cp -v ~/.bashrc  $(BACKUPDIR)
-	/bin/cp -v ~/.bash_profile  $(BACKUPDIR)
-	/bin/cp -v ~/.aliases $(BACKUPDIR)
-	/bin/cp -v aliases ~/.aliases
-	/bin/cp -v ~/.functions $(BACKUPDIR)
-	/bin/cp -v functions ~/.functions
+	touch ~/.bashrc
+	/bin/cp -vf ~/.bashrc  $(BACKUPDIR)
+	touch ~/.bashrc
+	/bin/cp -vf ~/.bash_profile  $(BACKUPDIR)
+	touch ~/.bashrc
+	/bin/cp -vf ~/.aliases $(BACKUPDIR)
+	touch ~/.aliases
+	/bin/cp -vf aliases ~/.aliases
+	touch ~/.functions
+	/bin/cp -vf ~/.functions $(BACKUPDIR)
+	touch ~/.functions
+	/bin/cp -vf functions ~/.functions
 
 zsh:
-	/bin/cp -v ~/.zshrc $(BACKUPDIR)
-	/bin/cp -v zshrc ~/.zshrc
+	touch ~/.zshrc
+	/bin/cp -vf ~/.zshrc $(BACKUPDIR)
+	/bin/cp -vf zshrc ~/.zshrc
 
 git:
-	/bin/cp -v ~/.gitconfig $(BACKUPDIR)
-	/bin/cp -v gitconfig ~/.gitconfig
+	touch ~/.gitconfig
+	/bin/cp -vf ~/.gitconfig $(BACKUPDIR)
+	/bin/cp -vf gitconfig ~/.gitconfig
 
 tmux:
-	/bin/cp -v ~/.tmux.conf $(BACKUPDIR)
-	/bin/cp -v tmux.conf ~/.tmux.conf
+	touch ~/.tmux.conf
+	/bin/cp -vf ~/.tmux.conf $(BACKUPDIR)
+	/bin/cp -vf tmux.conf ~/.tmux.conf
 
 vim:
-	/bin/cp -v ~/.vimrc $(BACKUPDIR)
-	/bin/cp -v vimrc ~/.vimrc
+	touch ~/.vimrc
+	/bin/cp -vf ~/.vimrc $(BACKUPDIR)
+	/bin/cp -vf vimrc ~/.vimrc
 
 ruby:
-	/bin/cp -v ~/.irbrc $(BACKUPDIR)
-	/bin/cp -v irbrc ~/.irbrc
-	/bin/cp -v ~/.gemrc $(BACKUPDIR)
-	/bin/cp -v gemrc ~/.gemrc
+	touch ~/.irbrc
+	/bin/cp -vf ~/.irbrc $(BACKUPDIR)
+	/bin/cp -vf irbrc ~/.irbrc
+	touch ~/.gemrc
+	/bin/cp -vf ~/.gemrc $(BACKUPDIR)
+	/bin/cp -vf gemrc ~/.gemrc

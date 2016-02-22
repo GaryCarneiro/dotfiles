@@ -1,5 +1,6 @@
 # SSHAgent Bash
 function sshize() {
+    touch ~/.ssh_agent
     ssh-add -l 2>/dev/null | egrep -q ".*"
     if [ $? -eq 0 ] ; then
       echo "Agent already running. Sourcing it in current shell"
