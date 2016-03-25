@@ -75,7 +75,7 @@ if [ -f ~/.rvm/scripts/rvm ] ; then
 fi
 
 if [ -f ~/anaconda/bin ] ; then
-    export  PATH=$PATH:~/anaconda/bin # Add Anaconda Bin to PATH for scripting
+    export PATH=~/anaconda/bin:$PATH # Add Anaconda Bin to PATH for scripting
 fi
 #Do NOT share history between different shells. (It gets irritating after some time )
 #
