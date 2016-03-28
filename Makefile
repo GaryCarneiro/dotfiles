@@ -14,15 +14,16 @@ ssh:
 shell:
 	touch ~/.bashrc
 	/bin/cp -vf ~/.bashrc  $(BACKUPDIR)
-	touch ~/.bashrc
+	
+	touch ~/.bash_profile
 	/bin/cp -vf ~/.bash_profile  $(BACKUPDIR)
-	touch ~/.bashrc
-	/bin/cp -vf ~/.aliases $(BACKUPDIR)
+
 	touch ~/.aliases
+	/bin/cp -vf ~/.aliases $(BACKUPDIR)
 	/bin/cp -vf aliases ~/.aliases
+	
 	touch ~/.functions
 	/bin/cp -vf ~/.functions $(BACKUPDIR)
-	touch ~/.functions
 	/bin/cp -vf functions ~/.functions
 
 zsh:
