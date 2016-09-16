@@ -49,6 +49,9 @@ plugins=(git)
 
 export EDITOR='vim'
 
+# LANG Support for perl to stop complaining
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
