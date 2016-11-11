@@ -35,3 +35,15 @@ if has("autocmd")
     \   exe "normal! g`\"" |
     \ endif
 endif
+
+" Powerline for VIM (Mac)
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
+
+" MacVIM Powerline Font Config
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=Inconsolata\ for\ Powerline:h15
+   endif
+endif
