@@ -9,7 +9,9 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME=random
 # ZSH_THEME=pygmalion
 # ZSH_THEME="gentoo"
-ZSH_THEME="geoffgarside"
+# ZSH_THEME="geoffgarside"
+ZSH_THEME="jreese"
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
