@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # Ensure we're not running as root
 
@@ -9,8 +9,9 @@ fi
 
 export anaconda_pkg_version='4.4.0'
 export anaconda_base_url='https://repo.continuum.io/archive'
-export anaconda_prefix_path="~/.anaconda/3"
-export anaconda_pip=$(echo "$anaconda_prefix_path"/bin/pip)
+export anaconda_prefix_path="$HOME/.anaconda/3"
+export anaconda_pip="$anaconda_prefix_path"/bin/pip
+echo $anaconda_pip
 
 echo "Determing OS"
 os=$(uname)
