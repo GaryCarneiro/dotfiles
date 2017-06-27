@@ -7,14 +7,10 @@ if [ $EUID -eq 0 ] ; then
   exit 1
 fi
 
-anaconda_pkg_version='4.4.0'
-anaconda_base_url='https://repo.continuum.io/archive'
-
-anaconda_linux_url='https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh'
-anaconda_mac_url='https://repo.continuum.io/archive/Anaconda3-4.4.0-MacOSX-x86_64.sh'
-
-
-
+export anaconda_pkg_version='4.4.0'
+export anaconda_base_url='https://repo.continuum.io/archive'
+export anaconda_prefix_path="~/.anaconda/3"
+export anaconda_pip=$(echo "$anaconda_prefix_path"/bin/pip)
 
 echo "Determing OS"
 os=$(uname)
@@ -34,15 +30,28 @@ function AptUpdate(){
 
 function DownloadAnaconda3() {
   if [ $1 = 'Linux' ] ; then
-    #anaconda_url=$anaconda_linux_url
-    anaconda_package_name=$(echo "Anaconda3-"$anaconda_pkg_version"-Linux-x86_64.sh")
+
+    anaconda_linux_package_name=$(echo "Anaconda3-"$anaconda_pkg_version"-Linux-x86_64.sh")
     anaconda_url=$(echo $anaconda_base_url/$anaconda_package_name)
+
     echo "Downloading Anaconda from: $anaconda_url"
+
     curl -I $anaconda_url
-    chmod +x $anaconda_package_name
-    ./$anaconda_package_name -b -p ~/.anaconda/3
+    chmod +x $anaconda_linux_package_name
+    echo "Installing Anaconda from $anaconda_linux_package_name"
+    #./$anaconda_linux_package_name -b -p $anaconda_prefix_path
+
   elif [$1 = 'Darwin'] ; then
-    echo "Eat an Apple"
+    anaconda_macos_package_name=$(echo "Anaconda3-"$anaconda_pkg_version"-MacOSX-x86_64.sh")
+    anaconda_url=$(echo $anaconda_base_url/$anaconda_package_name)
+
+    echo "Downloading Anaconda from: $anaconda_url"
+
+    curl -I $anaconda_url
+    chmod +x $anaconda_linux_package_name
+    echo "Installing Anaconda from $anaconda_linux_package_name"
+    #./$anaconda_linux_package_name -b -p $anaconda_prefix_path
+
   fi
 }
 
@@ -51,8 +60,8 @@ linux_pkg_names=(git zsh vim tmux curl wget)
 
 if [ $os = 'Linux' ] ; then
   echo "OS is Linux"
-  # We are specific to Ubuntu
-  AptUpdate
+  # Caveat(?): We are specific to Ubuntu
+  #AptUpdate
   for pkg in "${linux_pkg_names[@]}" ; do
     CheckAndAptInstall $pkg
   done
@@ -60,4 +69,10 @@ if [ $os = 'Linux' ] ; then
 elif [ $os = 'Darwin'] ; then
   echo "OS is MacOSX"
   DownloadAnaconda3 Darwin
+fi
+
+echo "Checking if $anaconda_pip is executable"
+if [[ -x $anaconda_pip ]] ; then
+  echo "Installing Ansile using $anaconda_pip"
+  $anaconda_pip install ansible
 fi
