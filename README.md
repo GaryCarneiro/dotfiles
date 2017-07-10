@@ -3,7 +3,8 @@ dotfiles
 
 DotFiles contains profiles  and customistions that used on daily basis
 
-#Example 
+#Example
+
 $ git clone git@github.com:GaryCarneiro/dotfiles.git
 
-$ cd dotfiles && make
+$ cd dotfiles && ./dotfiles.yml
