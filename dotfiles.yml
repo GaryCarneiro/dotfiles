@@ -2,11 +2,11 @@
 # ansible 2.2.1.0
 
 - name: Configure my dotfiles
-  hosts: "{{ remote_host }}"
+  hosts: "{{ myhost }}"
   vars:
-      scp_user: garfield
+      my_user: "garfield"
   tasks:
       - name:   get tmux conf file
         file:
           src: tmux/tmux.conf
-          dest: "/home/{{ remote_user}}/.tmux.conf"
+          dest: "/home/{{ my_user}}/.tmux.conf"
