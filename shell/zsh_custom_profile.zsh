@@ -17,3 +17,7 @@ fi
 if [ -f ~/.functions ] ; then
     source ~/.functions
 fi
+
+if [ -f ~/.python.path ] ; then
+  source ~/.python.path
+fi

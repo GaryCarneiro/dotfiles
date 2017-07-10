@@ -17,3 +17,6 @@ cp -v ./aliases ~/.aliases
 
 cp -v ~/.functions  $bdir
 cp -v ./functions ~/.functions
+
+cp -v ~/.python.path  $bdir
+cp -v ./python_path ~/.python.path

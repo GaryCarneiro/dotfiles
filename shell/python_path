@@ -1,0 +1,11 @@
+if [ -f ~/.anaconda/bin ] ; then                                                              
+ export PATH=~/anaconda/bin:$PATH 
+fi
+
+if [ -f ~/.anaconda/2/bin ] ; then
+ export PATH=~/.anaconda/2/bin:$PATH
+fi
+
+if [ -f ~/.anaconda/3/bin ] ; then
+ export PATH=~/.anaconda/3/bin:$PATH
+fi
