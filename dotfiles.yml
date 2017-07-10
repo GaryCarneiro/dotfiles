@@ -1,0 +1,12 @@
+#!/usr/bin/env ansible-playbook
+# ansible 2.2.1.0
+
+- name: Configure my dotfiles
+  hosts: "{{ remote_host }}"
+  vars:
+      scp_user: garfield
+  tasks:
+      - name:   get tmux conf file
+        file:
+          src: tmux/tmux.conf
+          dest: "/home/{{ remote_user}}/.tmux.conf"
