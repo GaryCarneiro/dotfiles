@@ -2,11 +2,7 @@
 # ansible 2.2.1.0
 
 - name: Configure my dotfiles
-  hosts: "{{ myhost }}"
-  vars:
-      my_user: "garfield"
+  remote_user: garfield
   tasks:
-      - name:   get tmux conf file
-        file:
-          src: tmux/tmux.conf
-          dest: "/home/{{ my_user}}/.tmux.conf"
+      - name: copy tmux conf file
+        copy: src=tmux/tmux.conf dest="/home/{{ my_user}}/.tmux.conf" mode=644
