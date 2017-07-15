@@ -18,5 +18,5 @@ cp -v ./aliases ~/.aliases
 cp -v ~/.functions  $bdir
 cp -v ./functions ~/.functions
 
-cp -arv ./anapy $HOME/.oh-my-zsh/custom/plugins
-cp -arv  $HOME/.oh-my-zsh/custom/plugins/anapy $bdir
+cp -aRv ./anapy $HOME/.oh-my-zsh/custom/plugins
+cp -aRv  $HOME/.oh-my-zsh/custom/plugins/anapy $bdir
