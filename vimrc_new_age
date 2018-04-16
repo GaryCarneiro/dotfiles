@@ -1,0 +1,98 @@
+filetype off                  " required
+" Download Vundle
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+syntax on
+colorscheme koehler
+"colorscheme blue
+
+syntax enable
+filetype indent on
+" set autoindent width to 4 spaces
+set et
+set sw=4          "
+set smarttab
+set ruler          "Show cursor position in right hand corner
+set ignorecase     "Ignore Search case         
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show unicode glyphs
+set paste
+
+if v:version >= 703
+        set cursorline          " Set Horizontal line
+"        set cursorcolumn       " Set Vertical line
+endif
+
+" Map F5 and F6 to run ruby and python scripts respectively
+nnoremap <silent> <F5> :!clear ; ruby %<CR>
+nnoremap <silent> <F6> :!clear ; python %<CR>
+
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+
+if has("autocmd")
+  " Enable filetype detection
+  filetype plugin indent on     
+
+  " Restore cursor position since last opening
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+endif
+
+set laststatus=2
+
+" MacVIM Powerline Font Config
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=Inconsolata\ for\ Powerline:h15
+   endif
+endif
+
+
+let g:terraform_align=1
+let g:terraform_remap_spacebar=1
+autocmd FileType terraform setlocal commentstring=#%s
