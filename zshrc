@@ -10,7 +10,7 @@ setopt Ignoreeof
 if [ -f ~/.antigen.zsh ] ; then
   source ~/.antigen.zsh
 else
-  curl -L git.io/antigen -o ~/.antigen.zsh && source ~/.antigen.zsh
+  curl -s -L git.io/antigen -o ~/.antigen.zsh && source ~/.antigen.zsh
 fi
 
 antigen use oh-my-zsh
