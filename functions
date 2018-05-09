@@ -59,3 +59,17 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
             man "$@"
 }
+
+# SSH via JumpBox
+# Make entry for Jumpbox in ~/.ssh/config
+
+jssh() {
+    usage="Usage : $0 <ip-address>"
+    u=$USER
+    if [ $# -lt 1 ];
+        then
+        echo $usage
+    else
+        ssh -A -tt $u@jumpbox ssh -tt $u@$1
+    fi
+}
