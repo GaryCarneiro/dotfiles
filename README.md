@@ -3,7 +3,12 @@ dotfiles
 
 DotFiles contains profiles  and customistions that used on daily basis
 
-#Example 
-$ git clone git@github.com:GaryCarneiro/dotfiles.git
+# INSTALLATION
+ 
+curl -sLo ~/.zshrc 'git.io/vpDFJ'
 
-$ cd dotfiles && make
+
+# UPDATING
+$ refresh_dot_files
+
+
