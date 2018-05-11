@@ -10,19 +10,8 @@ function cert() {
 # 1. Attaches to ( last?? ) Tmux session if no arguments is given
 # 2. Attaches to the same Tmux session if Session exists given an argument
 # 3. Creates a Session if not already present given an argument
-function ta() {
-    if [ -z $1 ] ; then
-        echo -e "\nAttaching to last session\n"  
-        tmux attach 
-    elif [ ! -z $1 ] ; then
-        echo -e "Checking if Session exists\n"
-        tmux has-session -t $1   && tmux att -t $1
-
-        if [ $? -eq 1 ] ; then
-            echo -e  "Session does not exists. Creating one\n" 
-            tmux new -s $1 
-        fi 
-    fi
+ta() {
+  tmux attach -t $1 || tmux new -t $1
 }
 
 alias tn='ta'
