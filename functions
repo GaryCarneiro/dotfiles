@@ -67,6 +67,7 @@ refresh_dot_files () {
  echo "Refreshing Profile. Backing up in $BDIR"
  echo "Press Ctrl+C to exit or ENTER to continue"
  read
+ mkdir $BDIR
  mv ~/.vimrc $BDIR
  mv ~/.antigen.zsh $BDIR
  mv ~/.zshrc $BDIR
