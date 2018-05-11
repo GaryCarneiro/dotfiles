@@ -67,12 +67,12 @@ refresh_dot_files () {
  echo "Refreshing Profile. Backing up in $BDIR"
  echo "Press Ctrl+C to exit or ENTER to continue"
  read
- mkdir -p $BDIR/
- mv ~/.vimrc $BDIR/
+ mkdir -pv $BDIR/
+ mv -v ~/.zshrc $BDIR/
+ curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
+ mv -v ~/.vimrc $BDIR/
  rm -rf ~/.vim/bundle/Vundle.vim
- mv ~/.antigen.zsh $BDIR/
- mv ~/.zshrc $BDIR/
- mv ~/.functions.zsh $BDIR/
- mv ~/.tmux.conf $BDIR/
+ mv -v ~/.functions.zsh $BDIR/
+ mv -v ~/.tmux.conf $BDIR/
  curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
 }
