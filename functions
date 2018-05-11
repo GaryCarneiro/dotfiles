@@ -50,20 +50,27 @@ man() {
 # Make entry for Jumpbox in ~/.ssh/config
 
 jssh() {
-    usage="Usage : $0 <ip-address>"
-    u=$USER
-    if [ $# -lt 1 ];
-        then
-        echo $usage
+usage="Usage : $0 <ip-address>"
+u=$USER
+if [ $# -lt 1 ];
+    then
+    echo $usage
     else
         ssh -A -tt $u@jumpbox ssh -tt $u@$1
     fi
 }
 
+jscp() {
+# https://superuser.com/questions/276533/scp-files-via-intermediate-host
+ echo "Copying $1 to $2"
+ scp -oProxyJump=jumpbox $1 $2
+}
 
-refresh_dot_files () {
+
+
+dot_files_refresh () {
  TIMESTAMP=$(date "+%h%d-%Y-%H%M%S")
- BDIR="/tmp/dotfiles-$TIMESTAMP"
+ BDIR="/tmp/garfield/dotfiles-$TIMESTAMP"
  echo "Refreshing Profile. Backing up in $BDIR"
  echo "Press Ctrl+C to exit or ENTER to continue"
  read
