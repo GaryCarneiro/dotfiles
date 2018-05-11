@@ -13,12 +13,8 @@ alias vi='vim'
 alias ..='cd ..'
 
 alias av='ping -a in.yahoo.com'
-alias s='ssh carneiro@s'
-alias rssh='/Users/gcarneiro/git/SSHProfileCopy/bin/rssh.rb'
 alias bx="bundle exec"
 
-# Fix SSH Agent https://goo.gl/rVzy6D
-alias fix='export $(tmux showenv | grep -i sock)'
 
 #TMUX STUFF
 alias tl='tmux ls'
