@@ -1,17 +1,3 @@
-# SSHAgent Bash
-function sshize() {
-    touch ~/.ssh_agent
-    ssh-add -l 2>/dev/null | egrep -q ".*"
-    if [ $? -eq 0 ] ; then
-      echo "Agent already running. Sourcing it in current shell"
-      source ~/.ssh_agent
-      return 7
-    fi
-    ssh-agent | head -2 | tee ~/.ssh_agent
-    source ~/.ssh_agent
-    /bin/echo -e "\nDon't forget to run ssh-add after this\n"
-}
-
 # This function cert fetches SSL Certificate on a specified port or defaults the port to 443
 
 function cert() {
@@ -72,4 +58,19 @@ jssh() {
     else
         ssh -A -tt $u@jumpbox ssh -tt $u@$1
     fi
+}
+
+
+refresh_dot_files () {
+ TIMESTAMP=$(date "+%h%d-%Y-%H%M%S")
+ BDIR="/tmp/dotfile-$TIMESTAMP"
+ echo "Refreshing Profile. Backing up in $BDIR"
+ echo "Press Ctrl+C to exit or ENTER to continue"
+ read
+ mv ~/.vimrc $BDIR
+ mv ~/.antigen.zsh $BDIR
+ mv ~/.zshrc $BDIR
+ mv ~/.functions.zsh $BDIR
+ mv ~/.tmux.conf $BDIR
+ curl -o ~/.zshrc 'https://git.io/vpDFJ'
 }
