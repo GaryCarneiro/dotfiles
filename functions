@@ -72,6 +72,7 @@ refresh_dot_files () {
  curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
  mv -v ~/.vimrc $BDIR/
  rm -rf ~/.vim/bundle/Vundle.vim
+ rm-rf ~/.antigen
  mv -v ~/.functions.zsh $BDIR/
  mv -v ~/.tmux.conf $BDIR/
  curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
