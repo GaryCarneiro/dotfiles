@@ -77,3 +77,10 @@ refresh_dot_files () {
  mv -v ~/.tmux.conf $BDIR/
  curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
 }
+
+
+rssh() {
+  rsync  ~/.zshrc $1:~/.zshrc
+  echo "SSHing $1"
+  ssh $*
+}
