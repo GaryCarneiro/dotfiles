@@ -63,11 +63,11 @@ jssh() {
 
 refresh_dot_files () {
  TIMESTAMP=$(date "+%h%d-%Y-%H%M%S")
- BDIR="/tmp/dotfile-$TIMESTAMP"
+ BDIR="/tmp/dotfiles-$TIMESTAMP"
  echo "Refreshing Profile. Backing up in $BDIR"
  echo "Press Ctrl+C to exit or ENTER to continue"
  read
- mkdir $BDIR/
+ mkdir -p $BDIR/
  mv ~/.vimrc $BDIR/
  rm -rf ~/.vim/bundle/Vundle.vim
  mv ~/.antigen.zsh $BDIR/
