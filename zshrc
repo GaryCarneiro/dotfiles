@@ -1,9 +1,19 @@
 #!/usr/bin/env zsh
 
-if [[ -f ~/.zsh_custom_profile ]]; then
-  source ~/.zsh_custom_profile
+# VIM CONFIG
+if ! [[ -f ~/.vimrc ]] ; then
+  echo "Downloading Vimrc."
+  curl -s -L 'https://git.io/vpDo4' -o ~/.vimrc
+  echo "Cloning Vundle."
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+# TMUX CONFIG
+if ! [[ -f ~/.tmux.conf ]] ; then
+  echo "Downloading tmux.conf"
+  curl -s -L 'https://git.io/vpDoX' -o ~/.tmux.conf
 fi
 
+# ANTIGEN
 if [[ -f ~/.antigen.zsh ]] ; then
   source ~/.antigen.zsh
 else
@@ -11,6 +21,8 @@ else
   curl -s -L 'https://git.io/antigen' -o ~/.antigen.zsh && source ~/.antigen.zsh
 fi
 
+
+# CUSTOM ZSH FUNCTIONS
 if [[ -f ~/.functions.zsh ]] ; then
   source ~/.functions.zsh
 else
@@ -18,17 +30,9 @@ else
   curl -s -L 'https://git.io/vpDo3' -o ~/.functions.zsh && source ~/.functions.zsh
 fi
 
-
-if ! [[ -f ~/.vimrc ]] ; then
-  echo "Downloading Vimrc."
-  curl -s -L 'https://git.io/vpDo4' -o ~/.vimrc
-  echo "Cloning Vundle."
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
-if ! [[ -f ~/.tmux.conf ]] ; then
-  echo "Downloading tmux.conf"
-  curl -s -L 'https://git.io/vpDoX' -o ~/.tmux.conf
+# CUSTOM ZSH PROFILE
+if [[ -f ~/.zsh_custom_profile ]]; then
+  source ~/.zsh_custom_profile
 fi
 
 antigen use oh-my-zsh
