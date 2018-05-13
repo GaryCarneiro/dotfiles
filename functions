@@ -72,6 +72,8 @@ dot_files_refresh () {
  rm -rf ~/.antigen
  mv -v ~/.functions.zsh $BDIR/
  mv -v ~/.tmux.conf $BDIR/
+ mv -v ~/.gemrc $BDIR
+ mv -v ~/.irbrc $BDIR
  curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
 }
 
