@@ -9,7 +9,7 @@ fi
 # VIM CONFIG
 if ! [[ -f ~/.vimrc ]] ; then
   echo "Downloading Vimrc."
-  curl -s -L 'https://git.io/vpDo4' -o ~/.vimrc
+  curl -sLo ~/.vimrc 'https://git.io/vpDo4'
   echo "Cloning Vundle."
   git clone https://github.com/VundleVim/Vundle.vim.git \
   ~/.vim/bundle/Vundle.vim
@@ -17,17 +17,17 @@ fi
 # TMUX CONFIG
 if ! [[ -f ~/.tmux.conf ]] ; then
   echo "Downloading tmux.conf"
-  curl -s -L 'https://git.io/vpDoX' -o ~/.tmux.conf
+  curl -sLo ~/.tmux.conf 'https://git.io/vpDoX'
 fi
 
 # Ruby GEMRC
 if ! [[ -f ~/.gemrc ]] ; then
   echo "Downloading GemRC"
-  curl -s -L 'https://git.io/vpShg' -o ~/.gemrc
+  curl -sLo ~/.gemrc 'https://git.io/vpShg'
 fi
 
 # Ruby IRBRC
 if ! [[ -f ~/.irbrc ]] ; then
   echo "Downloading IRBRC."
-  curl	 -s -L 'https://git.io/vpShK' -o ~/.irbrc
+  curl -sLo ~/.irbrc 'https://git.io/vpShK'
 fi
