@@ -28,7 +28,7 @@ if [[ -f ~/.functions.zsh ]] ; then
 else
   echo "Downloading Functions."
   curl -s -L 'https://git.io/vpDo3' -o ~/.functions.zsh && \
-	  source ~/.functions.zsh
+  source ~/.functions.zsh
 fi
 
 # CUSTOM ZSH PROFILE
