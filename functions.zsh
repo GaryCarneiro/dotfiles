@@ -6,7 +6,6 @@ function cert() {
   openssl s_client -connect $1:$port
 }
 
-
 #This function ta()  does following
 # 1. Attaches to ( last?? ) Tmux session if no arguments is given
 # 2. Attaches to the same Tmux session if Session exists given an argument
@@ -62,18 +61,21 @@ dot_files_refresh () {
   echo "Press Ctrl+C to exit or ENTER to continue"
   read
   mkdir -pv $BDIR/
-  /bin/mv -v ~/.zshrc $BDIR/
-  curl -s -L -o ~/.zshrc 'https://git.io/vpSjJ'
-  /bin/mv -v ~/.vimrc $BDIR/
-  rm -rf ~/.vim/bundle/Vundle.vim
-  rm -rf ~/.antigen
+	# ZSH
+  /bin/mv -v ~/.zshrc $BDIR/ && \
+  curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
+  /bin/mv -v ~/.zsh_custom_profile $BDIR
+  /bin/rm -rf ~/.antigen
   /bin/mv -v ~/.functions.zsh $BDIR/
+  # VIM
+  /bin/mv -v ~/.vimrc $BDIR/
+  /bin/rm -rf ~/.vim/bundle/Vundle.vim
+  # TMUX
   /bin/mv -v ~/.tmux.conf $BDIR/
+  # RUBY
   /bin/mv -v ~/.gemrc $BDIR
   /bin/mv -v ~/.irbrc $BDIR
-  curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
 }
-
 
 rssh() {
   rsync  ~/.zshrc $1:~/.zshrc
