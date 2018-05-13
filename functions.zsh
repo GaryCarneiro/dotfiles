@@ -66,7 +66,7 @@ dot_files_refresh () {
  read
  mkdir -pv $BDIR/
  mv -v ~/.zshrc $BDIR/
- curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
+ curl -s -L -o ~/.zshrc 'https://git.io/vpSjJ'
  mv -v ~/.vimrc $BDIR/
  rm -rf ~/.vim/bundle/Vundle.vim
  rm -rf ~/.antigen
