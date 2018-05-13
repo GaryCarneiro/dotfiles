@@ -40,7 +40,7 @@ if [[ -f ~/.functions.zsh ]] ; then
   source ~/.functions.zsh
 else
   echo "Downloading Functions."
-  curl -s -L 'https://git.io/vpDo3' -o ~/.functions.zsh && \
+  curl -s -L 'https://git.io/vpShy' -o ~/.functions.zsh && \
   source ~/.functions.zsh
 fi
 
