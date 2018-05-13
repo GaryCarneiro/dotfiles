@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # This function cert fetches SSL Certificate on a specified port or defaults the port to 443
 
 function cert() {
