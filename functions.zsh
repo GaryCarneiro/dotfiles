@@ -63,7 +63,7 @@ dot_files_refresh () {
   mkdir -pv $BDIR/
 	# ZSH
   /bin/mv -v ~/.zshrc $BDIR/ && \
-  curl -s -L -o ~/.zshrc 'https://git.io/vpDFJ'
+  curl -s -L -o ~/.zshrc 'https://git.io/vpSjJ'
   /bin/mv -v ~/.zsh_custom_profile $BDIR
   /bin/rm -rf ~/.antigen
   /bin/mv -v ~/.functions.zsh $BDIR/
