@@ -1,5 +1,4 @@
-
-#!/usr/bin/ruby                                                                                                                                                                                                                             
+#!/usr/bin/env ruby                                                                                                                                                                                                                             
 #Auto Completion for Ruby
 #sudo gem install wirble (Universal)
 #sudo apt-get install ruby-wirble (Debian)
