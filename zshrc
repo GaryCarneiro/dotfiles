@@ -23,7 +23,7 @@ fi
 # Ruby IRBRC
 if ! [[ -f ~/.irbrc ]] ; then
   echo "Downloading IRBRC."
-  curl -s -L 'https://git.io/vpShK' -o ~/.irbrc
+  curl	 -s -L 'https://git.io/vpShK' -o ~/.irbrc
 fi
 
 # ANTIGEN
@@ -45,7 +45,11 @@ else
 fi
 
 # CUSTOM ZSH PROFILE
-if [[ -f ~/.zsh_custom_profile ]]; then
+if ! [[ -f ~/.zsh_custom_profile ]]; then
+  echo "Dowloading  Custom Profile"
+  curl -s -L 'https://git.io/vpShp' -o ~/.zsh_custom_profile && \
+  source ~/.zsh_custom_profile
+else
   source ~/.zsh_custom_profile
 fi
 
