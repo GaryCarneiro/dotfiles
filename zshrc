@@ -22,7 +22,7 @@ fi
 
 # Ruby IRBRC
 if ! [[ -f ~/.irbrc ]] ; then
-  echi "Downloading IRBRC."
+  echo "Downloading IRBRC."
   curl -s -L 'https://git.io/vpShK' -o ~/.irbrc
 fi
 
