@@ -49,8 +49,6 @@ if [[ -f ~/.zsh_custom_profile ]]; then
   source ~/.zsh_custom_profile
 fi
 
-if
-
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
