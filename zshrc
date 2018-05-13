@@ -5,7 +5,8 @@ if ! [[ -f ~/.vimrc ]] ; then
   echo "Downloading Vimrc."
   curl -s -L 'https://git.io/vpDo4' -o ~/.vimrc
   echo "Cloning Vundle."
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git \
+  ~/.vim/bundle/Vundle.vim
 fi
 # TMUX CONFIG
 if ! [[ -f ~/.tmux.conf ]] ; then
@@ -18,7 +19,8 @@ if [[ -f ~/.antigen.zsh ]] ; then
   source ~/.antigen.zsh
 else
   echo "Downloading Antigen."
-  curl -s -L 'https://git.io/antigen' -o ~/.antigen.zsh && source ~/.antigen.zsh
+  curl -s -L 'https://git.io/antigen' -o ~/.antigen.zsh && \
+  source ~/.antigen.zsh
 fi
 
 
@@ -41,7 +43,6 @@ antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme agnoster
-
 antigen apply
 
 unsetopt sharehistory
