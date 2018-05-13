@@ -64,7 +64,7 @@ dot_files_refresh () {
 	# ZSH
   /bin/mv -v ~/.zshrc $BDIR/ && \
   curl -sLo ~/.zshrc \
-	'https://raw.githubusercontent.com/GaryCarneiro/dotfiles/nuage/zshrc.zsh'
+  'https://raw.githubusercontent.com/GaryCarneiro/dotfiles/nuage/zshrc.zsh'
   /bin/mv -v ~/.zsh_custom_profile $BDIR
   /bin/rm -rf ~/.antigen
   /bin/mv -v ~/.functions.zsh $BDIR/
