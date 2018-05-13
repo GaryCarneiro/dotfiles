@@ -14,6 +14,18 @@ if ! [[ -f ~/.tmux.conf ]] ; then
   curl -s -L 'https://git.io/vpDoX' -o ~/.tmux.conf
 fi
 
+# Ruby GEMRC
+if ! [[ -f ~/.gemrc ]] ; then
+  echo "Downloading GemRC"
+  curl -s -L 'https://git.io/vpShg' -o ~/.gemrc
+fi
+
+# Ruby IRBRC
+if ! [[ -f ~/.irbrc ]] ; then
+  echi "Downloading IRBRC."
+  curl -s -L 'https://git.io/vpShK' -o ~/.irbrc
+fi
+
 # ANTIGEN
 if [[ -f ~/.antigen.zsh ]] ; then
   source ~/.antigen.zsh
@@ -22,7 +34,6 @@ else
   curl -s -L 'https://git.io/antigen' -o ~/.antigen.zsh && \
   source ~/.antigen.zsh
 fi
-
 
 # CUSTOM ZSH FUNCTIONS
 if [[ -f ~/.functions.zsh ]] ; then
@@ -37,6 +48,8 @@ fi
 if [[ -f ~/.zsh_custom_profile ]]; then
   source ~/.zsh_custom_profile
 fi
+
+if
 
 antigen use oh-my-zsh
 antigen bundle git
