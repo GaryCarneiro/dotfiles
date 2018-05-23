@@ -9,6 +9,6 @@ curl -sLo ~/.zshrc 'https://raw.githubusercontent.com/GaryCarneiro/dotfiles/nuag
 
 
 # UPDATING
-$ refresh_dot_files
+$ dot_files_refresh
 
 
