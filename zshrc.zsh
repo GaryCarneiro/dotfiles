@@ -36,5 +36,3 @@ antigen apply
 
 unsetopt sharehistory
 setopt Ignoreeof
-
-export TERM="xterm-256color"

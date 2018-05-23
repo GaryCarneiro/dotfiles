@@ -31,3 +31,6 @@ if ! [[ -f ~/.irbrc ]] ; then
   echo "Downloading IRBRC."
   curl -sLo ~/.irbrc 'https://git.io/vpShK'
 fi
+
+export TERM="xterm-256color"
+export EDITOR="vim"
