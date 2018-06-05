@@ -31,7 +31,7 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme agnoster
+antigen theme bhilburn/powerlevel9k powerlevel9k
 antigen apply
 
 unsetopt sharehistory
