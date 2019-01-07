@@ -20,6 +20,12 @@ if ! [[ -f ~/.tmux.conf ]] ; then
   curl -sLo ~/.tmux.conf 'https://git.io/vpDoX'
 fi
 
+# TMUX FOR WINDOWS PUTTY
+if ! [[ -f ~/.tmux.conf ]] ; then
+  echo "Downloading tmux.conf for Windows Specific Settings"
+  curl -sLo  ~/.tmux.conf_windows 'https://git.io/fhs5v'
+fi
+
 # Ruby GEMRC
 if ! [[ -f ~/.gemrc ]] ; then
   echo "Downloading GemRC"
