@@ -39,7 +39,7 @@ if ! [[ -f ~/.irbrc ]] ; then
 fi
 
 # Aliases
-if ! [[ -f ~/.aliases ]] ; then
+if [[ -f ~/.aliases ]] ; then
   source ~/.aliases
 fi
 
