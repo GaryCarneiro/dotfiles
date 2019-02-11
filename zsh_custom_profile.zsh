@@ -38,5 +38,10 @@ if ! [[ -f ~/.irbrc ]] ; then
   curl -sLo ~/.irbrc 'https://git.io/vpShK'
 fi
 
+# Aliases
+if ! [[ -f ~/.aliases ]] ; then
+  source ~/.aliases
+fi
+
 export TERM="xterm-256color"
 export EDITOR="vim"
