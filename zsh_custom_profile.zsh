@@ -43,5 +43,10 @@ if [[ -f ~/.aliases ]] ; then
   source ~/.aliases
 fi
 
+# Anaconda / Python
+if [[ -d $HOME/.anaconda/3/bin ]] ; then
+	export PATH="$HOME/.anaconda/3/bin:$PATH"
+fi
+
 export TERM="xterm-256color"
 export EDITOR="vim"
