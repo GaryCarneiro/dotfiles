@@ -1,4 +1,4 @@
-#COMMAND ALIASES
+# COMMAND ALIASES
 alias l='ls -F'
 alias lr='ls -lrt'
 alias ls='ls -F'
@@ -12,9 +12,9 @@ alias du='du -sh .'
 alias vi='vim'
 alias ..='cd ..'
 
-alias av='ping -a in.yahoo.com'
+alias av='ping -a 8.8.8.8'
 alias bx="bundle exec"
 
 
-#TMUX STUFF
+# TMUX STUFF
 alias tl='tmux ls'
