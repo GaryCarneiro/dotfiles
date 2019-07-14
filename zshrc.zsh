@@ -27,11 +27,18 @@ else
   source ~/.zsh_custom_profile
 fi
 
+
+# Antigen ZSH Settings
+
+export ALIEN_THEME="blue"
+export USE_NERD_FONT=1
+
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme eendroroy/alien alien
+# antigen theme bhilburn/powerlevel9k powerlevel9k
 antigen apply
 
 unsetopt sharehistory
