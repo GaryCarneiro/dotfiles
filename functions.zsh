@@ -83,3 +83,31 @@ rssh() {
   echo "SSHing $1"
   ssh $*
 }
+
+
+gssh-add() {
+  ssh_files = "~/.ssh/id_rsa ~/.ssh/id_rsa_somekey"
+  for ssh_file in ssh_files
+  do
+    ssh-add $ssh_file
+  done
+}
+
+
+get_git_conf() {
+  ls -go ~/.gitconfig | cut -d " " -f10-
+}
+
+git_switch_config() {
+  echo -n "Original Config: "
+  ls -go ~/.gitconfig | cut -d " " -f10-
+  current_config=$(get_git_conf| cut -d ">" -f2)
+  new_config=$(ls -go  ~/.gitconfig.* | grep -v $current_config | cut -d " " -f9)
+  unlink ~/.gitconfig
+  ln -s $new_config ~/.gitconfig
+  echo -n "New Git Config: "
+  ls -go ~/.gitconfig | cut -d " " -f10-
+}
+
+alias ggc=get_git_conf
+alias gsc=git_switch_config
